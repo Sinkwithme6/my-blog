@@ -309,224 +309,6 @@
       opacity: 0.6;
     }
  
-    /* ── FULL-WIDTH ROW ── */
-    .post-card-wide {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      background: var(--bg-card);
-      cursor: pointer;
-      transition: transform 0.2s;
-      overflow: hidden;
-    }
-    .post-card-wide:hover { transform: translateY(-2px); }
-    .post-card-wide .wide-accent {
-      background: var(--rust);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2.5rem;
-    }
-    .post-card-wide .wide-accent span {
-      font-family: var(--serif);
-      font-size: 5rem;
-      color: rgba(255,255,255,0.15);
-      font-style: italic;
-      line-height: 1;
-    }
-    .post-card-wide .wide-content {
-      padding: 2.5rem;
-    }
-    .post-card-wide .tag {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 0.6rem;
-    }
-    .post-card-wide h2 {
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      font-weight: 400;
-      line-height: 1.25;
-      margin-bottom: 0.8rem;
-    }
-    .post-card-wide h2 em { font-style: italic; }
-    .post-card-wide .excerpt {
-      font-family: var(--body);
-      font-size: 0.95rem;
-      color: var(--ink-muted);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-    .post-card-wide .meta {
-      font-family: var(--sans);
-      font-size: 0.67rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      opacity: 0.6;
-    }
- 
-    /* ── HALF CARDS ── */
-    .post-half {
-      grid-column: span 6;
-      background: var(--bg-card);
-      padding: 2rem;
-      cursor: pointer;
-      transition: transform 0.2s;
-      border-top: 3px solid var(--rule);
-    }
-    .post-half:hover {
-      transform: translateY(-3px);
-      border-top-color: var(--rust);
-    }
-    .post-half .tag {
-      font-family: var(--sans);
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 0.5rem;
-    }
-    .post-half h3 {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
-    }
-    .post-half h3 em { font-style: italic; }
-    .post-half .excerpt {
-      font-family: var(--body);
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-      line-height: 1.65;
-      margin-bottom: 0.8rem;
-    }
-    .post-half .meta {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      opacity: 0.55;
-    }
- 
-    /* ── MODAL ── */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(20, 18, 15, 0.85);
-      z-index: 200;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-      overflow-y: auto;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-      backdrop-filter: blur(4px);
-    }
-    .modal-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .modal {
-      background: var(--bg);
-      max-width: 720px;
-      width: 100%;
-      padding: 0;
-      position: relative;
-      transform: translateY(20px);
-      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
-    }
-    .modal-overlay.open .modal { transform: translateY(0); }
-    .modal-header {
-      background: var(--ink);
-      padding: 2.5rem 3rem;
-      color: var(--bg);
-      position: relative;
-    }
-    .modal-header .tag {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 0.8rem;
-    }
-    .modal-header h2 {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 1.2;
-      color: #f0ebe3;
-    }
-    .modal-header h2 em { font-style: italic; }
-    .modal-header .meta {
-      font-family: var(--sans);
-      font-size: 0.67rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(240,235,227,0.4);
-      margin-top: 1rem;
-    }
-    .modal-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: var(--bg);
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.2rem;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .modal-close:hover { background: rgba(255,255,255,0.2); }
-    .modal-body {
-      padding: 2.5rem 3rem;
-    }
-    .modal-body p {
-      font-family: var(--body);
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--ink);
-      margin-bottom: 1.4rem;
-    }
-    .modal-body p:first-child::first-letter {
-      font-size: 3.5rem;
-      font-family: var(--serif);
-      float: left;
-      line-height: 0.8;
-      margin-right: 0.1em;
-      margin-top: 0.1em;
-      color: var(--rust);
-    }
-    .modal-body h3 {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ink);
-      margin: 2rem 0 0.8rem;
-    }
-    .modal-body blockquote {
-      border-left: 3px solid var(--rust);
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--ink-muted);
-    }
- 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
@@ -550,10 +332,6 @@
       nav, .hero, .filter-bar, .blog-grid, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
       .post-featured { grid-column: 1/-1; min-height: 320px; }
       .post-sidebar { grid-column: 1/-1; }
-      .post-card-wide { grid-column: 1/-1; grid-template-columns: 1fr; }
-      .post-card-wide .wide-accent { min-height: 100px; }
-      .post-half { grid-column: 1/-1; }
-      .modal-body, .modal-header { padding: 1.5rem; }
     }
  
     /* ── ENTRANCE ANIMATIONS ── */
@@ -567,8 +345,6 @@
     .blog-grid > *:nth-child(1) { animation-delay: 0.15s; }
     .blog-grid > *:nth-child(2) { animation-delay: 0.2s; }
     .blog-grid > *:nth-child(3) { animation-delay: 0.25s; }
-    .blog-grid > *:nth-child(4) { animation-delay: 0.3s; }
-    .blog-grid > *:nth-child(5) { animation-delay: 0.35s; }
   </style>
 </head>
 <body>
@@ -629,7 +405,7 @@
     <div class="post-meta">
       <span>March 2023</span>
       <span>·</span>
-      <span></span>
+      <span>8 min read</span>
     </div>
     <a class="read-link" href="blog-post.html?post=featured">
       Read Story →
@@ -658,32 +434,6 @@
     </article>
   </aside>
  
-  <!-- WIDE CARD -->
-  <article class="post-card-wide" onclick="location.href='blog-post.html?post=india'">
-    <div class="wide-accent"><span>02</span></div>
-    <div class="wide-content">
-      <p class="tag">Asia · 10 min read</p>
-      <h2>Varanasi at <em>4 AM</em></h2>
-      <p class="excerpt">The ghats are never truly empty. At the hour when the city should be silent, it is instead at its most honest — priests, pilgrims, and the river all doing exactly what they have always done.</p>
-      <p class="meta">September 2024 · 10 min read</p>
-    </div>
-  </article>
- 
-  <!-- HALF CARDS -->
-  <article class="post-half" onclick="location.href='blog-post.html?post=mustang'">
-    <p class="tag">Himalayas · 6 min read</p>
-    <h3>Upper <em>Mustang</em> — The Forbidden Kingdom</h3>
-    <p class="excerpt">Permits, dust, cliff monasteries, and a landscape so alien it felt like arriving on another planet.</p>
-    <p class="meta">June 2024 · 6 min</p>
-  </article>
- 
-  <article class="post-half" onclick="location.href='blog-post.html?post=border'">
-    <p class="tag">Asia · 5 min read</p>
-    <h3>Crossing Into <em>Tibet</em> at Kodari</h3>
-    <p class="excerpt">On borders, bureaucracy, and the strange feeling of being exactly on the line between two worlds.</p>
-    <p class="meta">April 2024 · 5 min</p>
-  </article>
- 
 </main>
  
 <footer>
@@ -691,124 +441,7 @@
   <p>Writing from Nepal & beyond</p>
 </footer>
  
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeIfOutside(event)">
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <button class="modal-close" onclick="closePost()">✕</button>
-      <p class="tag" id="modal-tag"></p>
-      <h2 id="modal-title"></h2>
-      <p class="meta" id="modal-meta"></p>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
-</div>
- 
 <script>
-  const posts = {
-    featured: {
-      tag: 'Himalayas · 8 min read',
-      title: 'Into the Unknown: <em>Camping at Bethanchwok</em>',
-      meta: 'March 2023 · 8 minute read',
-      body: `
-       `
-<p>The day before our hike to Naranthan known as Bethanchwok was filled with the familiar excitement that always made sleep difficult. It was me Ramesh and Suraj. Instead of sleeping I stayed up late watching hiking vlogs, trying to gather a better sense of what lay ahead. There's something thrilling about the unknown.</p>
-
-<p>By 4 a.m. still riding on that restless excitement Ramesh and I began packing. We moved quickly knowing our adventure was just hours away. We caught the bus from Radhe Radhe to Panauti. Suraj, who lived in Suryabinayak met us on board. None of us knew that the journey would take an unexpected turn.</p>
-
-<p>As always I made sure to sit next to the bus driver hoping to gain some local insights. To my surprise he turned out to be as much of an adventurer as we were. With a twinkle in his eye he shared tales of camping in Bethanchwok with his friends describing nights spent under the stars in the wilderness. Just as I was getting wrapped up in his story an old man probably in his 70s sitting nearby leaned in. "I've been to Naranthan more than ten times," he said his voice low but certain. His weathered face spoke of wisdom and secrets. "Don't go into the cave," he warned. "It's dense and slippery. Many have entered few have returned."</p>
-
-<p>A chill ran down my spine. We exchanged glances unsure if he was exaggerating or if this was a real warning. Either way our anticipation skyrocketed. In what felt like no time we arrived in Panauti. The market was bustling but we stayed focused. We grabbed essentials: a couple of noodle packets, 1 kg of apples and oranges and coffee supplies because what's an adventure without coffee? I had packed a kettle so coffee was non-negotiable.</p>
-
-<p>After waiting for about 30 minutes the bus started its climb toward Dhungkharka. The road felt long but our spirits were high. We finally arrived had a quick lunch stocked up on water and at exactly 10 a.m. we began our hike. Barely a few minutes in I asked a local when the last bus for Kathmandu would leave. "4:30 p.m.," he said. My heart sank. Ramesh ahead of me suddenly stopped dead in his tracks. "We won't make it," he said his voice tense. "We'll miss the bus."</p>
-
-<p>We paused. The realization dawned on us there was no way back today. But then an idea flashed through my mind. "What if we camp at Bethanchwok? It's better to camp there than stay here at a hotel in Dhungkharka we won't reach home today anyway," I suggested. Suraj quickly dismissed it nervous. "We have nothing for camping it's too risky." Ramesh chuckled. "Three packets of noodles and some fruit and you want to camp?" he teased. But I remembered something from the vlogs there was a homestay where we could rent a tent. Suddenly the idea of camping felt real. We debated for a while and finally curiosity won over caution. We agreed if we found a tent we'd camp.</p>
-
-<p>After an hour of hiking we reached a homestay. The place was quiet but we managed to rent a tent and three sleeping bags. We stocked up on more noodles and water knowing full well we weren't equipped to cook anything else. Armed with the bare minimum we left the homestay still unsure if this was a good idea. It was all unplanned. Our parents had no clue. And the weather well that was another thing.</p>
-
-<p>Before we left the homestay owner a kind but firm woman gave us a warning. "No non-veg near the temple," she said. "And take everything you need there's nothing beyond here."</p>
-
-<p>With no lights and no real supplies we began our unplanned camping journey. As we walked deeper into the forest a dog appeared. Without hesitation it started leading the way. We named him Khaire and without a doubt he became our guide. The trail had no markers and the forest was dense darker than we expected. Khaire led us deeper into the unknown.</p>
-
-<p>Suddenly we stumbled upon a potato field. Suraj grinned mischievously. "Let's take a few potatoes roasted over a campfire sound perfect." We dug up a few and shoved them into our bags feeling like we had stumbled upon hidden treasure. It felt almost too easy too perfect. But nature has its ways of humbling us.</p>
-
-<p>The trail grew darker the forest thicker. Time seemed to stretch and our pace slowed as we navigated the dense trees. Fog rolled in thick and suffocating. Soon we could barely see a few meters ahead. Khaire kept leading but even he seemed uncertain at times. The silence was frightening.</p>
-
-<p>Around 3:30 p.m. we reached Buddha Park. The fog was so dense that we couldn't see anything beyond a few feet. The cold started to bite and an eerie silence filled the air. We met a group of hikers coming down they told us there was no one at the top and they were leaving before dark. The unease grew. And then out of nowhere a second dog appeared. This one we named Kala. He seemed to hesitate before joining us as if deciding whether to accompany us on this strange journey. Now with two dogs by our side we felt safer though a sense of mystery still hung in the air.</p>
-
-<p>As we climbed higher the fog thickened. The weather felt almost otherworldly the trees like silent watchers in the mist. At 4:30 we reached the top Bethanchwok. But instead of the panoramic views we were hoping for all we saw was a wall of fog. The famous views of Terai and the mountains were lost to us hidden behind a veil of white.</p>
-
-<p>Night was falling fast and panic began to set in. We scrambled to find dry wood for a fire but everything was soaked from the week-long rain. Without a fire how would we cook? How would we keep warm? The reality of our situation hit us like a cold wind. We weren't just camping we were surviving. Almost half an hour down from the top we set out on our wood hunt but there was barely anything dry. Among the few sticks we found some seemed less soaked than others. Kala stayed with us while Khaire rested at the top almost like he was guarding our bags.</p>
-
-<p>By 5:30 the wind was howling relentless and there was no way we could light a fire out in the open. We spotted a small unfinished structure like a Pati and decided to use it as cover for the fire. The urgency set in it was getting darker fast and all our phones were dead. No light no backup. We divided the tasks: Ramesh worked on starting the fire while Suraj and I tackled the tent. Setting up the tent felt like trying to solve a puzzle not knowing where to begin. After some struggle we managed to get it up but the fire was still a no-go. The wood was too wet.</p>
-
-<p>By now the darkness was complete and the cold sank in deeper. Suraj started praying asking for the fire to light. Ramesh and I couldn't help but laugh at his prayer but a few minutes later somehow Ramesh finally got a flame going. The sight of that fire small but alive brought a wave of relief not just from the cold but from the fear creeping in. We cooked noodles and potatoes over the flames and in that moment noodles tasted like a five-star meal. Ramesh deserved all the credit. We shared biscuits with Kala and Khaire as thanks.</p>
-
-<p>The cold was biting now cutting through our thin shirts. Ramesh and I were holding up okay but Suraj his face was red and he was clearly struggling. My mind started racing what if he got sick? As a spiritual person I believed in protecting against negative energy so I applied a tika hoping it would help. Coincidence or not Suraj seemed to feel better soon after. After some time by the fire we got back to the tent.</p>
-
-<p>It was Friday so we still held out hope that other groups might show up but by 9 p.m. it was just us. The wind raged slapping against the tent like it was trying to tear it apart. We were inside chatting when suddenly we heard it a whistle. Sharp and loud. Kala and Khaire started barking furiously. Ramesh hopeful said "la kta hru aaya jasto xha aba ramilo hunxha." But none of us moved from the tent. A few minutes passed and still there was no other sound. Then with a tight voice Suraj said "oii tarsiyo ki k ho koi manxha tw aako xhaina jasto xha tw."</p>
-
-<p>Our hearts were beating fast. What was it? An animal? But animals don't whistle. For 20 minutes fear gripped us tightening like a knot. There was no way any of us could sleep now. Then just when the tension started to ease Ramesh fell asleep leaving Suraj and me in uneasy silence. Suraj kicked Ramesh awake and we forced ourselves into conversation trying to distract from the creeping fear.</p>
-
-<p>But around 11 p.m. it happened again. Kala and Khaire started barking even louder this time. This was different something was out there. Ramesh's voice trembled as he said "It could be a leopard. Maybe it's drawn to the dogs or the food waste hikers leave behind." Suddenly it all clicked the man-made trash bin nearby full of leftover scraps. Had an animal been visiting this spot lured by the scent of food? Our minds spun with terrifying possibilities.</p>
-
-<p>As midnight came a strange stillness took over. The darkness was so thick we couldn't see much making every little sound feel louder and closer. Suraj needed to relieve himself but none of us had the guts to go out alone. We convinced him to hold on but after nearly forty minutes he couldn't wait any longer. The three of us finally went out together each holding a stick just in case. We quickly fixed the tent which had nearly collapsed from the strong winds and then faced a new problem two of our sleeping bags had broken zippers. In the freezing cold we used them as blankets which didn't help much. Time seemed to crawl every five minutes felt like hours.</p>
-
-<p>Then out of nowhere one of the dogs started barking but this time it sounded different. It wasn't a normal bark. It sounded more like crying. "Is it because of the cold or is something else out there?" Suraj whispered nervously. There was nothing we could do except sit in fear wondering what might come next.</p>
-
-<p>After what felt like an eternity the clock finally turned to 5 a.m. I unzipped the tent to peek outside but the thick fog still cloaked everything. Despite the weather we decided to pack up and head down as early as we could. Just as we were getting ready a figure appeared through the fog. How could someone reach this remote spot at 5:30 in the morning? But soon after a few more people arrived. They were locals of Bethanchwok who believed that worshipping at Naranthan early on a Saturday morning would make their wishes come true. It made sense why they had braved such difficult conditions.</p>
-
-<p>The view from Bethanchwok was still hidden by fog so we made our thanks at the Naranthan temple and left with memories we'd never forget. Kala refused to come with us on the way back but Khaire stayed by our side all the way down to Dhungkharka. As we finally boarded the bus back home exhausted but satisfied I glanced at Ramesh and Suraj. We didn't have to say anything we all knew this was just the beginning of more adventures to come. The mountains after all always have more stories waiting to be discovered.</p>
-`
-      `
-    },
-    manaslu: {
-      tag: 'Himalayas ·',
-      title: '<em>Tsho Rolpa</em> in the Height',
-      meta: 'January 2025 ·',
-      body: `
-        <p>Soon To Publish. Stay Tune!!</p>
-      `
-    },
-    pokhara: {
-      tag: 'Reflections ·',
-      title: 'A Week in <em>Pokhara</em> Doing Nothing',
-      meta: 'October 2024 ·',
-      body: `
-        <p>Soon To Publish . Stay Tune!!</p>
-      `
-    },
-    momo: {
-      tag: 'Food · 3 min read',
-      title: 'In Pursuit of the <em>Perfect Momo</em>',
-      meta: 'August 2024 · 3 minute read',
-      body: `
-        <p>Soon To Publish . Stay Tune!!</p>
-      `
-  };
- 
-  function openPost(id) {
-    const p = posts[id];
-    if (!p) return;
-    document.getElementById('modal-tag').innerHTML = p.tag;
-    document.getElementById('modal-title').innerHTML = p.title;
-    document.getElementById('modal-meta').innerHTML = p.meta;
-    document.getElementById('modal-body').innerHTML = p.body;
-    document.getElementById('modalOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
- 
-  function closePost() {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
- 
-  function closeIfOutside(e) {
-    if (e.target === document.getElementById('modalOverlay')) closePost();
-  }
- 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePost(); });
- 
   // Filter buttons
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
